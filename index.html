@@ -1,0 +1,43 @@
+<html>
+
+
+<head>
+    <title>
+        Company Portal
+    </title>
+    
+</head>
+
+
+
+
+    <body>
+
+        <h1>Confidential Info</h1>
+        <p name="Placeholder1"></p>
+
+
+    <!--Ensure to place script when all document is loaded DOM is loaded-->
+    <script>
+        // document.getElementsByName("Placeholder1").item(1).innerText("Hello"); //It is not function rather a property
+ 
+        //document.getElementsByName("Placeholder1").item(0).innerText = "Hello";
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "https://testapi.free.beeceptor.com/", false);
+
+
+        xhr.send();
+
+        var responseString = xhr.response;
+
+        var responseFinalContent = JSON.parse(responseString).status;
+
+        document.getElementsByName("Placeholder1").item(0).innerText = responseFinalContent;
+
+ 
+ 
+     </script>
+    </body>
+</html>
